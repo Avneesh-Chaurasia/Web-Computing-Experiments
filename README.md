@@ -60,10 +60,10 @@ Web-Computing-Experiments/
 ├─ Experiment 10
 └─ README.md
 
-Author
+# Author
 
 Avneesh Chaurasia
 Student – Web Computing Course
 
-License
-This repository is for educational purposes. All rights reserved.
+# License
+- This repository is for educational purposes. All rights reserved.
