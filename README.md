@@ -47,7 +47,7 @@ This repository contains all the practical experiments conducted as part of the 
 
 ## **Folder Structure**
 Web-Computing-Experiments/
-│
+
 ├─ Experiment 1/
 
 ├─ Experiment 2/
@@ -72,8 +72,8 @@ Web-Computing-Experiments/
 
 # Author
 
-#**Avneesh Chaurasia**
-#**Student – Web Computing Course**
+**Name:** Avneesh Chaurasia  
+**Subject:** Web Computing
 
 # License
 - This repository is for educational purposes. All rights reserved.
