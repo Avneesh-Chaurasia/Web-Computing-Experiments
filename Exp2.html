@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4a90e2, #0073e6);
+            color: white;
+            text-align: center;
+            padding: 30px 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #4a90e2;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .book-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px;
+            gap: 25px;
+        }
+
+        .book {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 220px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .book:hover {
+            transform: scale(1.05);
+        }
+
+        .book img {
+            width: 100%;
+            height: 280px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            object-fit: cover;
+        }
+
+        .book h3 {
+            color: #333;
+            margin: 10px 0 5px 0;
+        }
+
+        .book p {
+            color: #777;
+            margin: 0 0 15px 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #0073e6;
+        }
+
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+        @media (max-width: 600px) {
+            .book-section {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Online Book Store</h1>
+        <p>Explore your favorite books anytime, anywhere!</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Categories</a>
+        <a href="#">Best Sellers</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section class="book-section">
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/81eB+7+CkUL.jpg" alt="Book 1">
+            <h3>Atomic Habits</h3>
+            <p>by James Clear</p>
+            <p class="price">₹499</p>
+        </div>
+
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="Book 2">
+            <h3>The Alchemist</h3>
+            <p>by Paulo Coelho</p>
+            <p class="price">₹399</p>
+        </div>
+
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/81vpsIs58WL.jpg" alt="Book 3">
+            <h3>Ikigai</h3>
+            <p>by Héctor García</p>
+            <p class="price">₹299</p>
+        </div>
+
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg" alt="Book 4">
+            <h3>Rich Dad Poor Dad</h3>
+            <p>by Robert Kiyosaki</p>
+            <p class="price">₹450</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Online Book Store | Designed by Avneesh Chaurasia</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page Validation</title>
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 400px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #007bff;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Registration Form</h2>
+
+    <form name="regForm" onsubmit="return validateForm()">
+      <label>First Name:</label>
+      <input type="text" id="fname" name="fname">
+      <span id="fnameError" class="error"></span>
+
+      <label>Last Name:</label>
+      <input type="text" id="lname" name="lname">
+      <span id="lnameError" class="error"></span>
+
+      <label>Password:</label>
+      <input type="password" id="password" name="password">
+      <span id="passwordError" class="error"></span>
+
+      <label>Email ID:</label>
+      <input type="text" id="email" name="email">
+      <span id="emailError" class="error"></span>
+
+      <label>Mobile Number:</label>
+      <input type="text" id="mobile" name="mobile">
+      <span id="mobileError" class="error"></span>
+
+      <label>Address:</label>
+      <textarea id="address" name="address" rows="3"></textarea>
+      <span id="addressError" class="error"></span>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      // Clear previous error messages
+      document.querySelectorAll('.error').forEach(e => e.innerText = "");
+
+      let fname = document.getElementById("fname").value.trim();
+      let lname = document.getElementById("lname").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let mobile = document.getElementById("mobile").value.trim();
+      let address = document.getElementById("address").value.trim();
+
+      let isValid = true;
+
+      // 1. First Name
+      const nameRegex = /^[A-Za-z]+$/;
+      if (!nameRegex.test(fname) || fname.length < 6) {
+        document.getElementById("fnameError").innerText =
+          "First name must be alphabets only and at least 6 characters.";
+        isValid = false;
+      }
+
+      // 2. Last Name
+      if (lname === "") {
+        document.getElementById("lnameError").innerText = "Last name cannot be empty.";
+        isValid = false;
+      }
+
+      // 3. Password
+      if (password.length < 6) {
+        document.getElementById("passwordError").innerText =
+          "Password must be at least 6 characters long.";
+        isValid = false;
+      }
+
+      // 4. Email
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById("emailError").innerText =
+          "Enter a valid email (e.g., name@domain.com).";
+        isValid = false;
+      }
+
+      // 5. Mobile Number
+      const mobileRegex = /^[0-9]{10}$/;
+      if (!mobileRegex.test(mobile)) {
+        document.getElementById("mobileError").innerText =
+          "Mobile number must be 10 digits only.";
+        isValid = false;
+      }
+
+      // 6. Address
+      if (address === "") {
+        document.getElementById("addressError").innerText = "Address cannot be empty.";
+        isValid = false;
+      }
+
+      // Final validation
+      if (isValid) {
+        alert("Registration Successful!");
+      }
+
+      return isValid;
+    }
+  </script>
+</body>
+</html>

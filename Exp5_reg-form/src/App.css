@@ -1,0 +1,138 @@
+/* Base reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f3f4f6;
+}
+
+/* Soft minimal gradient background */
+.naufal-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0e7ff 0%, #fdf2f8 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Abstract floating circles */
+.naufal-bg::before,
+.naufal-bg::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.5;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.naufal-bg::before {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle at 30% 30%, #a5b4fc, #c7d2fe);
+  top: -200px;
+  left: -200px;
+}
+
+.naufal-bg::after {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle at 70% 70%, #fbcfe8, #fde68a);
+  bottom: -200px;
+  right: -200px;
+}
+
+@keyframes float {
+  from { transform: translateY(0px); }
+  to { transform: translateY(40px); }
+}
+
+/* Glassmorphic registration container */
+.registration-box {
+  position: relative;
+  z-index: 1;
+  width: 70%; /* Bigger size for desktop */
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(25px);
+  border-radius: 30px;
+  padding: 60px 80px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.registration-box h1 {
+  text-align: center;
+  font-size: 40px;
+  color: #1e3a8a;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* Inputs */
+.registration-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-row {
+  display: flex;
+  gap: 20px;
+}
+
+.registration-box input,
+.registration-box textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 16px;
+  background: #ffffffcc;
+  outline: none;
+  transition: 0.3s;
+  resize: none;
+}
+
+.registration-box input:focus,
+.registration-box textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+}
+
+/* Button */
+.registration-box button {
+  padding: 16px;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.registration-box button:hover {
+  background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+  transform: translateY(-3px);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .registration-box {
+    width: 90%;
+    padding: 40px 30px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .registration-box h1 {
+    font-size: 32px;
+  }
+}
